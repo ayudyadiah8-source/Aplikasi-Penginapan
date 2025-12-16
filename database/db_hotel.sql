@@ -52,7 +52,7 @@ CREATE TRIGGER `trg_bookings_after_insert` AFTER INSERT ON `bookings` FOR EACH R
   DECLARE v_code VARCHAR(30);
   SET v_code = CONCAT('BK', LPAD(NEW.id, 8, '0'));
   UPDATE bookings
-  SET booking_code = v_code
+  SET kode_booking = v_code
   WHERE id = NEW.id;
 END
 $$
@@ -129,7 +129,7 @@ CREATE TABLE `payments` (
 --
 DELIMITER $$
 CREATE TRIGGER `trg_payments_before_insert` BEFORE INSERT ON `payments` FOR EACH ROW BEGIN
-  SET NEW.payment_code = CONCAT('PM', DATE_FORMAT(NOW(), '%y%m%d%H%i%s'), LPAD(FLOOR(RAND()*1000), 3, '0'));
+  SET NEW.id_booking = CONCAT('PM', DATE_FORMAT(NOW(), '%y%m%d%H%i%s'), LPAD(FLOOR(RAND()*1000), 3, '0'));
 END
 $$
 DELIMITER ;

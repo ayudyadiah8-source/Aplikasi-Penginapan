@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import (
     QTableWidgetItem,
     QMessageBox,
 )
-from admin.UI.UX.dashboard_admin import Ui_DashboardAdmin
+from admin.UI.dashboard_admin import Ui_DashboardAdmin
 from models.usersModel import UserModel
 from PyQt5.QtWidgets import QHeaderView
 

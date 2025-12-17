@@ -686,7 +686,7 @@ class Ui_DashboardAdmin(object):
         self.tableUsers.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableUsers.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
         self.tableUsers.setRowCount(0)
-        self.tableUsers.setColumnCount(4)
+        self.tableUsers.setColumnCount(5)
         self.tableUsers.setObjectName("tableUsers")
         item = QtWidgets.QTableWidgetItem()
         self.tableUsers.setHorizontalHeaderItem(0, item)
@@ -696,6 +696,8 @@ class Ui_DashboardAdmin(object):
         self.tableUsers.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableUsers.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableUsers.setHorizontalHeaderItem(4, item)
         self.layoutUsers.addWidget(self.tableUsers)
         self.layoutButtonsUsers = QtWidgets.QHBoxLayout()
         self.layoutButtonsUsers.setObjectName("layoutButtonsUsers")
@@ -733,7 +735,7 @@ class Ui_DashboardAdmin(object):
         self.verticalLayout.addWidget(self.lblFooter)
 
         self.retranslateUi(DashboardAdmin)
-        self.tabAdmin.setCurrentIndex(4)
+        self.tabAdmin.setCurrentIndex(5)
         QtCore.QMetaObject.connectSlotsByName(DashboardAdmin)
 
     def retranslateUi(self, DashboardAdmin):
@@ -964,6 +966,8 @@ class Ui_DashboardAdmin(object):
         item = self.tableUsers.horizontalHeaderItem(2)
         item.setText(_translate("DashboardAdmin", "Email"))
         item = self.tableUsers.horizontalHeaderItem(3)
+        item.setText(_translate("DashboardAdmin", "Role"))
+        item = self.tableUsers.horizontalHeaderItem(4)
         item.setText(_translate("DashboardAdmin", "No. WhatsApp"))
         self.btnRefreshUsers.setText(_translate("DashboardAdmin", "🔄 Refresh Data"))
         self.tabAdmin.setTabText(self.tabAdmin.indexOf(self.tabUsers), _translate("DashboardAdmin", "Data User"))

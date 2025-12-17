@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 15, 2025 at 09:06 AM
+-- Generation Time: Dec 17, 2025 at 02:00 AM
 -- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- PHP Version: 8.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,8 +38,8 @@ CREATE TABLE `bookings` (
   `total` decimal(12,2) NOT NULL DEFAULT '0.00',
   `tanggal_booking` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `batas_bayar` datetime NOT NULL,
-  `status` enum('dibooking','dibayar','selesai','dibatalkan') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'dibooking',
-  `note` text COLLATE utf8mb4_unicode_ci,
+  `status` enum('dibooking','dibayar','selesai','dibatalkan') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'dibooking',
+  `note` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -99,9 +99,9 @@ DELIMITER ;
 CREATE TABLE `chat` (
   `id` int NOT NULL,
   `booking_id` int NOT NULL,
-  `sender` enum('user','admin') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` text COLLATE utf8mb4_unicode_ci,
-  `attachment` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sender` enum('user','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `attachment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `waktu` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -116,10 +116,10 @@ CREATE TABLE `payments` (
   `id_bayar` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_booking` int NOT NULL,
   `jumlah` decimal(12,2) NOT NULL DEFAULT '0.00',
-  `bukti_bayar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `no_va` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bukti_bayar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_va` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `waktu_bayar` datetime DEFAULT CURRENT_TIMESTAMP,
-  `payment_status` enum('pending','confirmed','rejected') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
+  `payment_status` enum('pending','confirmed','rejected') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -142,9 +142,9 @@ DELIMITER ;
 
 CREATE TABLE `rooms` (
   `id` int NOT NULL,
-  `nama_kamar` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tipe` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `deskripsi` text COLLATE utf8mb4_unicode_ci,
+  `nama_kamar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipe` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `deskripsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `harga_weekday` decimal(12,2) NOT NULL DEFAULT '0.00',
   `harga_weekend` decimal(12,2) NOT NULL DEFAULT '0.00',
   `stok` int NOT NULL DEFAULT '0',
@@ -161,11 +161,12 @@ CREATE TABLE `rooms` (
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama_lengkap` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `no_wa` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` enum('admin','user') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user',
+  `nama_lengkap` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_wa` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -174,8 +175,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `nama_lengkap`, `email`, `no_wa`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin123', 'admin', 'admin@gmail.com', '086542875667', '2025-12-11 11:56:52', '2025-12-11 12:00:00');
+INSERT INTO `users` (`id`, `username`, `password`, `role`, `nama_lengkap`, `email`, `no_wa`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin123', 'admin', 'Ahmad', 'admin@gmail.com', '086542875667', '2025-12-11 11:56:52', '2025-12-11 12:00:00');
 
 --
 -- Indexes for dumped tables

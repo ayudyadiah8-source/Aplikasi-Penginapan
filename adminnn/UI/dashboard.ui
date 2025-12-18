@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminDashboard</class>
+
+ <widget class="QMainWindow" name="AdminDashboard">
+  <property name="windowTitle">
+   <string>Pandawa Admin Dashboard</string>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>850</height>
+   </rect>
+  </property>
+
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+
+    <!-- SIDEBAR -->
+    <item>
+     <widget class="QFrame" name="sidebar">
+      <property name="minimumWidth">
+       <number>240</number>
+      </property>
+      <layout class="QVBoxLayout">
+
+       <item>
+        <widget class="QLabel" name="label_title">
+         <property name="text">
+          <string>🏨 Hotel Pandawa</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btn_kamar">
+         <property name="text">
+          <string>🛏️ Manajemen Kamar</string>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btn_pembayaran">
+         <property name="text">
+          <string>💳 Validasi Pembayaran</string>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btn_pemesanan">
+         <property name="text">
+          <string>📅 Data Pemesanan</string>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btn_laporan">
+         <property name="text">
+          <string>📊 Laporan</string>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btn_kritik">
+         <property name="text">
+          <string>💬 Kritik dan Saran</string>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btn_user">
+         <property name="text">
+          <string>👥 Data User</string>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btn_logout">
+         <property name="text">
+          <string>🚪 LOG OUT</string>
+         </property>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+    <!-- CONTENT AREA -->
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget"/>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+
+ <resources/>
+ <connections/>
+</ui>

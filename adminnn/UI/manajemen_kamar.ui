@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminHotelApp</class>
+ <widget class="QWidget" name="AdminHotelApp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1150</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dashboard Admin Pandawa</string>
+  </property>
+
+  <layout class="QVBoxLayout" name="mainLayout">
+
+   <!-- HEADER -->
+   <item>
+    <widget class="QLabel" name="labelHeader">
+     <property name="text">
+      <string>🏨 MANAGEMENT DATA KAMAR</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <!-- TOP LAYOUT -->
+   <item>
+    <layout class="QHBoxLayout" name="topLayout">
+
+     <!-- FORM -->
+     <item>
+      <widget class="QGroupBox" name="formBox">
+       <property name="title">
+        <string>Informasi Kamar</string>
+       </property>
+       <layout class="QGridLayout">
+
+        <item row="0" column="0"><widget class="QLabel"><property name="text"><string>No. Kamar</string></property></widget></item>
+        <item row="0" column="1"><widget class="QLineEdit" name="in_room_number"/></item>
+
+        <item row="1" column="0"><widget class="QLabel"><property name="text"><string>Tipe Kamar</string></property></widget></item>
+        <item row="1" column="1"><widget class="QLineEdit" name="in_tipe_room"/></item>
+
+        <item row="2" column="0"><widget class="QLabel"><property name="text"><string>Harga Weekday</string></property></widget></item>
+        <item row="2" column="1"><widget class="QLineEdit" name="in_harga_wd"/></item>
+
+        <item row="3" column="0"><widget class="QLabel"><property name="text"><string>Harga Weekend</string></property></widget></item>
+        <item row="3" column="1"><widget class="QLineEdit" name="in_harga_we"/></item>
+
+        <item row="4" column="0"><widget class="QLabel"><property name="text"><string>Stok</string></property></widget></item>
+        <item row="4" column="1"><widget class="QSpinBox" name="in_stok"/></item>
+
+        <item row="5" column="0"><widget class="QLabel"><property name="text"><string>Gambar</string></property></widget></item>
+        <item row="5" column="1">
+         <layout class="QHBoxLayout">
+          <item><widget class="QLineEdit" name="in_file_name"/></item>
+          <item><widget class="QPushButton" name="btn_browse"><property name="text"><string>Pilih File</string></property></widget></item>
+         </layout>
+        </item>
+
+        <item row="6" column="0"><widget class="QLabel"><property name="text"><string>Deskripsi</string></property></widget></item>
+        <item row="6" column="1"><widget class="QTextEdit" name="in_desc"/></item>
+
+       </layout>
+      </widget>
+     </item>
+
+     <!-- PREVIEW -->
+     <item>
+      <widget class="QGroupBox" name="previewBox">
+       <property name="title">
+        <string>Preview</string>
+       </property>
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLabel" name="lbl_preview">
+          <property name="minimumSize">
+           <size><width>250</width><height>250</height></size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="text">
+           <string>Tidak ada gambar</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+
+    </layout>
+   </item>
+
+   <!-- BUTTONS -->
+   <item>
+    <layout class="QHBoxLayout">
+     <item><widget class="QPushButton" name="btn_add"><property name="text"><string>➕ Tambah</string></property></widget></item>
+     <item><widget class="QPushButton" name="btn_update"><property name="text"><string>💾 Update</string></property></widget></item>
+     <item><widget class="QPushButton" name="btn_delete"><property name="text"><string>🗑️ Hapus</string></property></widget></item>
+     <item><widget class="QPushButton" name="btn_refresh"><property name="text"><string>🔄 Refresh</string></property></widget></item>
+    </layout>
+   </item>
+
+   <!-- TABLE -->
+   <item>
+    <widget class="QTableWidget" name="table">
+     <column>
+      <property name="text"><string>ID</string></property>
+     </column>
+     <column>
+      <property name="text"><string>No</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Tipe</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Deskripsi</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Harga WD</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Harga WE</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Stok</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Visual</string></property>
+     </column>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminPaymentValidationApp</class>
+ <widget class="QWidget" name="AdminPaymentValidationApp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Admin Pandawa - Validasi Pembayaran</string>
+  </property>
+
+  <layout class="QVBoxLayout" name="mainLayout">
+
+   <!-- HEADER -->
+   <item>
+    <widget class="QLabel" name="labelHeader">
+     <property name="text">
+      <string>💳 VALIDASI PEMBAYARAN Customer</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string>font-size:22px;font-weight:bold;color:#8B4513;margin:15px;</string>
+     </property>
+    </widget>
+   </item>
+
+   <!-- TABLE -->
+   <item>
+    <widget class="QTableWidget" name="table">
+     <property name="columnCount">
+      <number>8</number>
+     </property>
+     <column>
+      <property name="text"><string>ID Bayar</string></property>
+     </column>
+     <column>
+      <property name="text"><string>ID Book</string></property>
+     </column>
+     <column>
+      <property name="text"><string>ID VA</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Jumlah</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Waktu Bayar</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Status</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Nama File</string></property>
+     </column>
+     <column>
+      <property name="text"><string>ID Room</string></property>
+     </column>
+    </widget>
+   </item>
+
+   <!-- BUTTONS -->
+   <item>
+    <layout class="QHBoxLayout" name="buttonLayout">
+     <item>
+      <widget class="QPushButton" name="btn_refresh">
+       <property name="text">
+        <string>🔄 Refresh Data</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_view_proof">
+       <property name="objectName">
+        <string>btn_view</string>
+       </property>
+       <property name="text">
+        <string>🖼️ Lihat Bukti Transfer</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_confirm">
+       <property name="objectName">
+        <string>btn_confirm</string>
+       </property>
+       <property name="text">
+        <string>✅ Konfirmasi Pembayaran</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

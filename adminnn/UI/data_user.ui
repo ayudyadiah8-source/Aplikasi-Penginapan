@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminUserManagementApp</class>
+ <widget class="QWidget" name="AdminUserManagementApp">
+  <property name="geometry">
+   <rect>
+    <x>0</x><y>0</y><width>1000</width><height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Golden Stay - Manajemen User</string>
+  </property>
+
+  <layout class="QVBoxLayout" name="verticalLayout">
+
+   <!-- HEADER -->
+   <item>
+    <widget class="QLabel" name="label_header">
+     <property name="text">
+      <string>👥 KELOLA DATA PENGGUNA</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <!-- TABLE USER -->
+   <item>
+    <widget class="QTableWidget" name="table">
+     <property name="columnCount">
+      <number>6</number>
+     </property>
+     <column>
+      <property name="text"><string>ID User</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Username</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Nama</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Role</string></property>
+     </column>
+     <column>
+      <property name="text"><string>Email</string></property>
+     </column>
+     <column>
+      <property name="text"><string>No. WA</string></property>
+     </column>
+    </widget>
+   </item>
+
+   <!-- BUTTON AREA -->
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btn_edit">
+       <property name="text">
+        <string>📝 Edit User</string>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation"><enum>Qt::Horizontal</enum></property>
+       <property name="sizeHint"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+
+     <item>
+      <widget class="QPushButton" name="btn_refresh">
+       <property name="text">
+        <string>🔄 Refresh Data</string>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QPushButton" name="btn_delete">
+       <property name="text">
+        <string>🗑️ Hapus User</string>
+       </property>
+      </widget>
+     </item>
+
+    </layout>
+   </item>
+
+  </layout>
+ </widget>
+</ui>

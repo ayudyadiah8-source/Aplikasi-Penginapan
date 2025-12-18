@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminBookingApp</class>
+ <widget class="QWidget" name="AdminBookingApp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Golden Stay - Data Pemesanan</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #FDF5E6; font-family: 'Segoe UI'; color: #5D4037;</string>
+  </property>
+  <layout class="QVBoxLayout" name="main_layout">
+   <item>
+    <widget class="QLabel" name="header">
+     <property name="styleSheet">
+      <string notr="true">font-size: 22px; font-weight: bold; color: #8B4513; margin: 15px;</string>
+     </property>
+     <property name="text">
+      <string>📋 DAFTAR RESERVASI KAMAR</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="top_bar">
+     <item>
+      <widget class="QLabel" name="label_search">
+       <property name="text">
+        <string>Cari:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="in_search">
+       <property name="placeholderText">
+        <string>Cari ID Booking atau ID User...</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white; border: 1px solid #DEB887; border-radius: 5px; padding: 5px;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <set>Qt::Horizontal</set>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_refresh">
+       <property name="styleSheet">
+        <string notr="true">background-color: #8B4513; color: white; border-radius: 8px; padding: 12px; font-weight: bold; min-width: 150px;</string>
+       </property>
+       <property name="text">
+        <string>🔄 Refresh Data</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="table">
+     <property name="styleSheet">
+      <string notr="true">background-color: white; alternate-background-color: #FFFACD; gridline-color: #D2B48C; border: 1px solid #D2B48C;</string>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionBehavior">
+      <set>QAbstractItemView::SelectRows</set>
+     </property>
+     <column>
+      <property name="text">
+       <string>ID Booking</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>ID User</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>ID Room</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Check-In</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Check-Out</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Jumlah Kamar</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Total Harga</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Tgl Booking</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Status</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
